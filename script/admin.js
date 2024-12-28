@@ -22,7 +22,7 @@ form.addEventListener("submit", async()=>{
                 "content-type":"application/json"
             },
            body:JSON.stringify(bookObj)
-        });
+        })
         let data = await res.json()
 
         alert("Book Added Successfully")
@@ -60,7 +60,7 @@ function displayBook(arr){
     category.textContent = el.category
     
     let availability = document.createElement("h4")
-    availability.textContent = "isAvailable:true"
+    availability.textContent = "isAvailable:false"
 
     let verifyBook = document.createElement("button")
     verifyBook.textContent = "Verify"
@@ -75,7 +75,10 @@ function displayBook(arr){
         confirm("Are you sure to delete?")
         deleteBook(e)
     })
+
   })
+  card.append(title,author,category,availability,verifyBook,deleteBtn)
+  container.append(card)
   
 } 
 
